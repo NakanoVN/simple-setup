@@ -1,0 +1,11 @@
+git clone https://github.com/NakanoVN/default-archiso.git
+
+### customize grub
+1. get theme from github or website and then clone/extract it
+2. copy theme folder to '/boot/grub/themes' (if /boot/grub/themes not exist just make it)
+-- 'copy -r <themes-folder> /boot/grub/themes'
+
+3. edit '/etc/default/grub' file:
+-- add or uncomment 'GRUB_THEME="/boot/grub/themes/<your-theme>/theme.txt"'
+-- change timeout to -1 to show menu forever or 5 to show menu for 5 seconds: GRUB_TIMEOUT=-1
+-- add 'GRUB_TERMINAL_OUTPUT="gfxterm"' (optional, Most GRUB themes automatically switch to gfxterm when GRUB_THEME is set.)

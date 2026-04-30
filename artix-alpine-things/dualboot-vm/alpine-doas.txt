@@ -1,0 +1,15 @@
+### alpine doas troubleshooting
+
+1. remove /etc/doas.d/*.conf
+-- 'doas rm -rf /etc/doas.d/*.conf'
+
+2. edit '/etc/doas.conf'
+-- 'doas nvim /etc/doas.conf'
+
+-- add this line:
+permit <user> as root
+permit nopass :wheel cmd reboot
+permit nopass :wheel cmd poweroff
+permit nopass :wheel cmd zzz
+permit nopass :wheel cmd sh args -c "sleep 1 && zzz"
+

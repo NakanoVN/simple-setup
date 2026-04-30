@@ -1,0 +1,18 @@
+### runit
+Start:		sudo sv start <name> or sv up <service_name>
+Stop:		sudo sv stop <name> or sv down <service_name>
+Restart:	sudo sv restart <name>
+Status:		sudo sv status <name>
+Enable:		sudo ln -s /etc/sv/<name> /var/service/
+-- for artix:   sudo ln -s /etc/runit/sv/<service_name> /run/runit/service 
+Disable:	sudo rm /var/service/<name>
+-- for artix:   sudo unlink /run/runit/service/<service_name>
+
+### openrc
+Start:			sudo rc-service <name> start
+Stop:			sudo rc-service <name> stop
+Restart:		sudo rc-service <name> restart
+Status:			rc-service <name> status
+Enable (at boot): 	sudo rc-update add <name> default 
+Disable (from boot):	sudo rc-update del <name> default
+To see all services and their current state, just run 'rc-status'

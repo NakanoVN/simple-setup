@@ -1,0 +1,90 @@
+### install artix
+1. boot into artix and choose iso
+2. 'cfdisk'
+
+3. make 4 partition (if disk memory is 40GB):
+-- 512M sda1 efi
+-- 2G/1G sda2 swap (optional)
+-- 18.5 sda3 artix
+-- the rest sda4 alpine
+
+4. format partition:
+-- 'mkfs.ext4 /dev/sda3'
+-- 'mkfs.ext4 /dev/sda4'
+-- 'mkfs.fat -F32 /dev/sda1'
+-- 'mkswap /dev/sda2' (optional)
+
+5. mount partition:
+-- 'mount /dev/sda3 /mnt'
+-- 'mkdir -p /mnt/boot/efi'
+-- 'mount /dev/sda1 /mnt/boot/efi'
+-- 'swapon /dev/sda2' (optional)
+
+6. 'basestrap -i /mnt base linux linux-firmware openrc/runit efibootmgr os-prober networkmanager-openrc/runit base-devel git vim nvim dhcpcd'
+7. 'fstabgen -U /mnt > /mnt/etc/fstab'
+8. 'artix-chroot /mnt'
+9. 'ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime'
+10. 'hwclock --systohc'
+11. 'vim /etc/locale.gen'
+-- uncomment the 'en_US.UTF-8'
+
+12. 'grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=artix'
+13. 'grub-mkconfig -o /boot/grub/grub.cfg'
+14. 'passwd'
+15. make user:
+-- 'useradd -mG wheel -s /bin/bash rann'
+-- 'passwd rann'
+-- 'EDITOR=vim visudo'
+-- uncomment 'wheel all'
+
+16. 'echo 'rann' >> /etc/hostname'
+-- for openrc: add hostname in '/etc/conf.d/hostname' too --> hostname='rann'
+
+17. reboot the system:
+-- 'exit'
+-- 'umount -R /mnt'
+-- 'poweroff' and eject the iso
+
+# -----------------------------
+
+### install alpine guest os
+1. insert alpine iso into artix machine
+2. boot and login with 'root'
+3. run 'setup-alpine':
+-- choose keyboard 'us' and variant 'us'
+-- hostname: 'jib'
+-- network: default or 'eth0/wlan0'
+-- do you want to do any manual network configuration?: n
+-- dns servers: none
+-- root passwd: 123
+-- timezone: 'Asia' then 'Jakarta'
+-- HTTP/FTP Proxy: none/blank
+-- mirror: f (fastest)
+-- user: jib
+-- NTP: default/busybox
+-- SSH: none
+-- disk mode: keep using none 
+
+4. after get into jib, mount the partition:
+-- 'mount /dev/sda4 /mnt'
+-- 'mkdir -p /mnt/boot'
+-- 'mount /dev/sda1 /mnt/boot'
+
+5. 'setup-disk -m sys /mnt'
+6. poweroff and eject the iso
+
+# -------------------------------
+
+###enabling os prober for dual booting:
+1. edit /etc/grub/default:
+-- 'sudo nvim /etc/default/grub'
+-- uncomment or add 'GRUB_DISABLE_OS_PROBER=false'
+
+2. 'sudo mount /dev/sda4 /mnt' --> mount alpine filesystem so the os-prober can detect it
+3. 'sudo os-prober'
+-- if it show alpine linux that mean os-prober have detect the alpine os
+
+4. 'grub-mkconfig -o /boot/grub/grub.cfg'
+5. 'reboot'
+
+

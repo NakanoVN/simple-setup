@@ -1,0 +1,12 @@
+### artix:
+-- 'sudo pacman -S xorg-xinit xorg-server xorg-xrandr i3 xterm dmenu feh autotiling htop ranger fastfetch zsh'
+-- change shell to zsh: 'chsh -s /bin/zsh'
+-- custom zsh with oh-my-zsh
+
+
+### alpine:
+-- edit '/etc/apk/repositories' and uncomment the community repo
+-- doas apk update
+-- 'setup-xorg-base'
+-- 'doas apk add i3wm i3status xterm feh font-dejavu autotiling git vim nvim htop ranger fastfetch bash shadow'
+-- change shell to bash: 'chsh -s /bin/bash'

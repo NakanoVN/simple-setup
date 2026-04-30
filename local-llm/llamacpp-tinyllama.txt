@@ -1,0 +1,16 @@
+### setup llama.cpp
+1. 'git clone https://github.com/ggerganov/llama.cpp'
+2. 'cd llama.cpp'
+3. 'cmake -B build'
+4. 'cmake --build build'
+
+### download tinyllama model gguf from hugging face
+1. go to https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF and download the model
+2. rename the model gguf file name
+-- 'mv * tiny.gguf'
+
+3. move model to 'llama.cpp/models'
+-- mv <tiny.gguf> ~/llama.cpp/models/
+
+### run the model
+1. './build/bin/llama-cli -m models/tiny.gguf'

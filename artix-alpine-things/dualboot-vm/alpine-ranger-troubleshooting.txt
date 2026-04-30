@@ -1,0 +1,5 @@
+### how to add jsonc format to ranger
+1. 'ranger --copy-config=rifle'
+2. 'nvim ~/.config/ranger/rifle.conf'
+3. add this line in the top:
+-- 'ext jsonc, has nvim, terminal = nvim '$@'
