@@ -24,6 +24,7 @@ case "$choice" in
 		;;
 	Suspend)
 		loginctl suspend
+#		doas sh -c "sleep 1 && zzz"
 #		exec systemctl suspend
 		;;
 esac
