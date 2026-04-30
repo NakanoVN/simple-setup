@@ -1,7 +1,10 @@
 # Created by newuser for 5.9
+
 PROMPT='%n@%m %~ %# '
+
 export EDITOR='nvim'
+export VISUAL='nvim'
+
 alias v='nvim'
 alias fast='fastfetch'
-
 alias ls='ls --color=auto'
