@@ -1,0 +1,28 @@
+--- neon theme ---
+#light colors
+white-pink: #f5e0dc
+light-pink: #f2cdcd
+normal-pink: #f5c2e7
+bold-pink: #eba0ac
+purple: #cba6f7
+red: #f38ba8
+
+#dark colors
+light-dark: #313244
+mid-dark: #1e1e2e
+bold-dark: 181825
+
+--- dark theme ----
+#light colors
+flamingo: #f0c6c6
+lavender: #b7bdf8
+
+#dark colors
+black: #000000
+
+--- simple archiso ---
+light-green: #40a02b
+dark-green: #00ff00
+pink: #ea76cb
+foreground: #b7bdf8 
+

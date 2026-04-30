@@ -1,0 +1,48 @@
+! URxvt !
+! Font 
+!URxvt.font: xft:DejaVuSansM Nerd Font:size=12:antialias=true
+!URxvt.boldFont: xft:DejaVuSansM Nerd Font:bold:size=12:antialias=true
+!
+! Colors 
+!URxvt.foreground: #b7bdf8
+!URxvt.background: #1e1e1e
+!URxvt.cursorColor: #b7bdf8
+!
+! scrollbar 
+!URxvt.scrollBar: false
+
+
+! UXterm !
+UXTerm*faceName: Hack Nerd Font
+UXTerm*faceSize: 12
+
+! Font 2
+!UXTerm*faceName: AnonymicePro Nerd Font
+!UXTerm*faceSize: 13
+
+! Font 3
+!UXTerm*faceName: BigBlueTermPlus Nerd Font
+!UXTerm*faceSize: 11
+
+! Colors
+UXTerm*foreground: #f5f5f5
+UXTerm*background: #000000
+UXTerm*cursorColor: #f5f5f5
+
+! Clipboard
+UXTerm*selectToClipboard: true
+UXTerm*VT100*translations: #override \
+	Shift Ctrl <Key>V: insert-selection(CLIPBOARD) \n\
+	Shift Ctrl <Key>C: select-end(CLIPBOARD)
+
+! XTerm !
+!XTerm*faceName: DejaVuSansM Nerd Font
+!XTerm*faceSize: 12
+
+!XTerm*foreground: #b7bdf8
+!XTerm*background: #1e1e1e
+!XTerm*cursorColor: #b7bdf8
+
+
+
+

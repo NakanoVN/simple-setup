@@ -1,0 +1,17 @@
+#pipewire setting
+  set volume = wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.75 (sets to 75%)
+  volume up = wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ (increases by 5%)
+  volume down = wpctl set-volume @DEFAULT_AUDIO_SINK 5%- (decrease by 5%)
+
+#mpv setting
+  command = mpv --no-video <youtube-url>
+  command (loop) = mpv --no-video --loop-file=inf <youtube-url>
+
+  spacebar = pause/play
+  Q = stop and quit playback
+  / or * = decrease or increase volume
+  → or ← = Seek forward/backward 5 seconds
+  ↑ or ↓ = Seek forward/backward 1 minute
+
+
+

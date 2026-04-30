@@ -1,0 +1,73 @@
+# the custom dmenu powermenu not work in void linux 
+# and here is how to fix that
+
+### 1. install doas
+'''
+- sudo xbps-install doas
+'''
+
+### 2. config the doas to give permit 
+'''
+- sudo vim /etc/doas.conf
+'''
+
+# add this line inside:
+'''
+permit nopass rann as root cmd poweroff
+permit nopass rann as root cmd reboot
+permit nopass rann as root cmd zzz
+'''
+
+### 3. edit the dmenu powermenu script
+'''
+- vim ~/.config/i3/scripts/dmenu_powermenu.sh
+'''
+
+## change this line inside
+# from this:
+'''
+choice=$(echo -e "$options"
+'''
+
+# to this:
+'''
+choice=$(echo "$options"
+'''
+
+## and also change this line inside
+# from this:
+'''
+case "$choice" in
+        Logout)
+                exec i3-msg exit
+                ;;
+        Reboot)
+                exec systemctl reboot
+                ;;
+        Shutdown)
+                exec systemctl poweroff
+                ;;
+        Suspend)
+                exec systemctl suspend
+                ;;
+esac
+'''
+
+# to this:
+'''
+case "$choice" in
+        Logout)
+                exec i3-msg exit
+                ;;
+        Reboot)
+                doas reboot
+                ;;
+        Shutdown)
+                doas poweroff
+                ;;
+        Suspend)
+                doas zzz
+                ;;
+esac
+'''
+

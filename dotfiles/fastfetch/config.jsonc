@@ -1,0 +1,78 @@
+{
+  "logo": {
+    "source": "~/.config/fastfetch/ascii/neko4.txt", 
+    "type": "auto",
+    "color": {
+      "1": "#b7bdf8"
+    },
+  },
+
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "modules": [
+    {
+      "type": "os",
+      "keyColor": "#b7bdf8"
+    },
+    {
+      "type": "host",
+      "keyColor": "#b7bdf8"
+    },
+    {
+      "type": "kernel",
+      "keyColor": "#b7bdf8"
+    },
+    {
+      "type": "uptime",
+      "keyColor": "#b7bdf8"
+    },
+    {
+      "type": "packages",
+      "keyColor": "#b7bdf8"
+    },
+    {
+      "type": "separator",
+      "keyColor": "#b7bdf8"
+    },
+    {
+      "type": "shell",
+      "keyColor": "#b7bdf8"
+    },
+    {
+      "type": "display",
+      "keyColor": "#b7bdf8"
+    },
+    {
+      "type": "wm",
+      "keyColor": "#b7bdf8"
+    },
+    {
+      "type": "terminal",
+      "keyColor": "#b7bdf8"
+    },
+    {
+      "type": "terminalfont",
+      "keyColor": "#b7bdf8"
+    },
+    {
+      "type": "separator",
+      "keyColor": "#b7bdf8"
+    },
+    {
+      "type": "cpu",
+      "keyColor": "#b7bdf8"
+    },
+    {
+      "type": "gpu",
+      "keyColor": "#b7bdf8"
+    },
+    {
+      "type": "memory",
+      "keyColor": "#b7bdf8"
+    },
+    {
+      "type": "disk",
+      "keyColor": "#b7bdf8"
+    }
+  ]
+}
+

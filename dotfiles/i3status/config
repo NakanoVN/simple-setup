@@ -1,0 +1,47 @@
+general {
+	colors = true
+	interval = 1
+
+##	white i3bar
+	color_good = "#ffffff"
+	color_bad = "#ff0000"
+	color_degraded = "#282a36"
+
+##	green i3bar
+#	color_good = "#00ff00"
+#	color_bad = "#ff0000"
+#	color_degraded = "#ffffff"
+}
+
+order += "disk /"
+order += "cpu_usage"
+order += "ethernet _first_"
+order += "wireless _first_"
+order += "battery 0"
+order += "time"
+
+disk "/" {
+	format = "/ %avail "
+}
+
+cpu_usage {
+	format = " CPU %usage "
+}
+
+wireless _first_ {
+	format_up = " WIFI %essid (%quality) "
+	format_down = " WIFI down "
+}
+
+ethernet _first_ {
+	format_up = " LAN %ip "
+	format_down = " LAN down "
+}
+
+battery 0 {
+	format = " BAT %percentage "
+}
+
+time {
+	format = " TIME %Y-%m-%d %H:%M "
+}

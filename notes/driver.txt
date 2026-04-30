@@ -1,0 +1,16 @@
+### How to install driver for webgl
+### 1. install mesa driver
+'''
+- sudo xbps-install mesa mesa-dri mesa-vulkan-intel mesa-demos
+'''
+
+# add 'mesa-vulkan-amd' for amd cpu or gpu
+
+### 2. set the firefox config
+## go to about:config and follow this settings:
+'''
+webgl.disable = false
+webgl.force-enabled = true
+webgl.enable-webgl2 = true
+layers.acceleration.force-enabled = true
+gfx.webrender.all = true

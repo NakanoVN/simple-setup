@@ -1,0 +1,6 @@
+'setup-xorg-base' --> xorg
+i3wm
+i3status
+feh
+autotiling
+dmenu
