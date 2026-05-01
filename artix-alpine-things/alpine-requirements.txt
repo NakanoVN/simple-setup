@@ -4,3 +4,4 @@ i3status
 feh
 autotiling
 dmenu
+xdg-utils
