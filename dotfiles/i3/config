@@ -282,6 +282,6 @@ gaps outer 5
 #background apps
 exec_always --no-startup-id feh --bg-fill ~/.config/wallpapers/morimiya-3.webp
 exec_always --no-startup-id autotiling
-
+#exec_always --no-startup-id xcompmgr -c -t-5 -l-5 -r4.2 -o.55 -f -D 2 &
 
 
